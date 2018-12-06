@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Chefs Page";
+}
+@using DishinSomeChefs.Models
+@model List<Chef>
+<h1> Chefs | <a href="/dishes">Dishes</a></h1>
+<a href="/new">Add a Chef</a>
+
+<h3>Check out these people who make food!</h3>
+
+<table>
+    <tr>
+        <th>Chef</th>
+        <th>Number Of Dishes</th>
+    </tr>
+    @foreach (var chef in Model)
+    {
+        <tr>
+            <td>@chef.FirstName @chef.LastName </td>
+            <td>@chef.Dishes.Count()</td>
+        </tr>
+    }
+</table>

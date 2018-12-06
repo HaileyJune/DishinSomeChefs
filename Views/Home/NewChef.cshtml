@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "New Chef Page";
+}
+@using DishinSomeChefs.Models
+@model Chef
+<h1>Add a Chef!</h1>
+<a href="/">Go Home</a>
+
+<form asp-action="CreateChef" asp-controller="Home" method="post">
+        <span asp-validation-for="FirstName"></span>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName">
+        <div></div>
+        <span asp-validation-for="LastName"></span>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName">
+        <div></div>
+        <input value="Add Chef" type="submit">    
+    </form>
